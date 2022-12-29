@@ -25,8 +25,6 @@ class AddPage extends StatelessWidget {
               ],
             ),
           ),
-
-          // InputTask()
         ],
       ),
     );
@@ -41,12 +39,12 @@ class CustomForm extends StatefulWidget {
 }
 
 class _CustomFormState extends State<CustomForm> {
-  final _formKey = GlobalKey<FormState>();
+  final _formKey       = GlobalKey<FormState>();
   final todoController = TextEditingController();
 
   Future createTask(Task task) async {
     final docTask = FirebaseFirestore.instance.collection('tasks').doc();
-    task.id = docTask.id;
+    task.id       = docTask.id;
 
     final json = task.toJson();
     await docTask.set(json);
@@ -55,7 +53,6 @@ class _CustomFormState extends State<CustomForm> {
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context);
-    final userId = authService.user.id;
 
     return Form(
       key: _formKey,
@@ -66,9 +63,7 @@ class _CustomFormState extends State<CustomForm> {
           children: <Widget>[
             TextFormField(
               controller: todoController,
-              validator: (value)  {
-                if ( value!.isEmpty ) return 'Por favor ingrese un texto';
-              },
+              validator: (value)  => ( value!.isEmpty ) ? 'Por favor ingrese un texto' : null,
               maxLines: 2,
               decoration: const InputDecoration(
                 hintText: "Ingrese la tarea a realizar",

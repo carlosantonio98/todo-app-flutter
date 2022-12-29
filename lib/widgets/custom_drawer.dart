@@ -15,28 +15,28 @@ class CustomDrawer extends StatelessWidget {
         children: <Widget> [
 
           DrawerHeader(
-            decoration: BoxDecoration( color: Colors.blueAccent ),
+            decoration: const BoxDecoration( color: Colors.blueAccent ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text( 'Opciones', style: TextStyle( fontWeight: FontWeight.bold, fontSize: 18.0 ), ),
+                const Text( 'Opciones', style: TextStyle( fontWeight: FontWeight.bold, fontSize: 18.0 ), ),
 
-                Spacer(),
+                const Spacer(),
 
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15.0),
-                  child: Container(
+                  child: SizedBox(
                     width: 50.0,
                     height: 50.0,
                     child: Image.network( authService.user.photoURL ),
                   ),
                 ),
 
-                Spacer(),
+                const Spacer(),
 
-                Text( authService.user.displayName, style: TextStyle( fontWeight: FontWeight.w400, fontSize: 13.0 ), ),
+                Text( authService.user.displayName, style: const TextStyle( fontWeight: FontWeight.w400, fontSize: 13.0 ), ),
 
-                Text( authService.user.email, style: TextStyle( fontWeight: FontWeight.w400, fontSize: 13.0 ), ),
+                Text( authService.user.email, style: const TextStyle( fontWeight: FontWeight.w400, fontSize: 13.0 ), ),
               ],
             )
           ),

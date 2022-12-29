@@ -9,10 +9,10 @@ class UserModel with ChangeNotifier {
   String email;
 
   UserModel({
-    this.id = "",
+    this.id          = "",
     this.displayName = "",
-    this.photoURL = "",
-    this.email = ""
+    this.photoURL    = "",
+    this.email       = ""
   });
 
 
@@ -21,10 +21,10 @@ class UserModel with ChangeNotifier {
     Map<String, dynamic> userData = userDoc.data() as Map<String, dynamic>;
 
     return UserModel(
-      id: userDoc.id, 
+      id:          userDoc.id, 
       displayName: userData['displayName'], 
-      photoURL: userData['photoURL'], 
-      email: userData['email'],
+      photoURL:    userData['photoURL'], 
+      email:       userData['email'],
     );
   }
 
@@ -34,15 +34,11 @@ class UserModel with ChangeNotifier {
 
     if (userDoc.data() != null) {
       Map<String, dynamic> userData = userDoc.data() as Map<String, dynamic>;
-
-      print( userDoc.data() );
     
-      this.id = userDoc.id;
-      this.displayName = userData['displayName'];
-      this.photoURL = userData['photoURL'];
-      this.email = userData['email'];
-
-      print('msj:' + this.id);
+      id          = userDoc.id;
+      displayName = userData['displayName'];
+      photoURL    = userData['photoURL'];
+      email       = userData['email'];
 
       // Notificamos a todos las paginas o widgets de una app para que se cambie la vieja información con la nueva
       notifyListeners();

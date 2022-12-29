@@ -13,16 +13,16 @@ class Task {
   });
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'todo': todo,
-    'done': done,
+    'id':     id,
+    'todo':   todo,
+    'done':   done,
     'userId': userId
   };
 
   static Task fromJson(Map<String, dynamic> json) => Task(
-    id: json['id'], 
-    todo: json['todo'], 
-    done: json['done'],
+    id:     json['id'], 
+    todo:   json['todo'], 
+    done:   json['done'],
     userId: json['userId']
   );
 }

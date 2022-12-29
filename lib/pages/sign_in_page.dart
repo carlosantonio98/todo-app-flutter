@@ -6,6 +6,7 @@ class SignInPage extends StatefulWidget {
   const SignInPage({ super.key });
 
   @override
+  // ignore: library_private_types_in_public_api
   _SignInPageState createState() => _SignInPageState();
 }
 
@@ -15,26 +16,26 @@ class _SignInPageState extends State<SignInPage> {
     final authService = Provider.of<AuthService>(context);
 
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('Todo app', style: TextStyle( fontWeight: FontWeight.bold, fontSize: 35.0 )),
+            const Text('Todo app', style: TextStyle( fontWeight: FontWeight.bold, fontSize: 35.0 )),
 
             ClipRRect(
-              child: Container(
+              child: SizedBox(
                 width: 40.0,
                 height: 40.0,
                 child: Image.asset( 'assets/logo.png' ),
               ),
             ),
 
-            SizedBox( height: 20.0 ),
+            const SizedBox( height: 20.0 ),
 
             ElevatedButton(
-              child: Text('Inicia con Google'),
+              child: const Text('Inicia con Google'),
               onPressed: () async {
                 await authService.googleSignIn();
               },

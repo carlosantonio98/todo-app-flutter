@@ -12,13 +12,6 @@ class CompletedTasks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    /* return Expanded(
-      child: ListView(
-        padding: EdgeInsets.symmetric( horizontal: 18 ),
-        children: tasks.map((TaskModel task) => TaskCard(title: task.name)).toList()
-      ),
-    ); */
-
     final authService = Provider.of<AuthService>(context);
 
     Stream<List<Task>> readTasks() => FirebaseFirestore.instance
