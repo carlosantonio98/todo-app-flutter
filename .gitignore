@@ -43,3 +43,5 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Ignore configuration file with sensitive credentials
+lib/config.dart
