@@ -44,7 +44,7 @@ dependencies:
   firebase_auth: ^4.2.0
 
   # provider
-  provider: 
+  provider: ^6.0.5
 
   # google
   google_sign_in: ^5.4.2
